@@ -23,61 +23,61 @@
     {% block corejs %}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/2d3b5b0189.js" crossorigin="anonymous"></script>
-
     {% endblock %}
 </head>
 
 <body class="bg-dark text-light">
-    <header class="container-fluid fixed-top">
-        <div class="row">
-            <div class="col-12 col-lg-4 text-center text-lg-start py-2">
-                <a href="{% url 'home' %}" class="nav-link">
-                    <h2 class="logo-font text-light my-0">
-                        🔮 <strong>Hecate’s</strong> Moon
-                    </h2>
-                </a>
-            </div>
-            <div class="col-12 col-lg-4 my-auto">
-                <form method="GET" action="">
-                    <div class="input-group">
-                        <input type="text" class="form-control rounded-0" placeholder="Search spells, herbs, charms...">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-light rounded-0" type="submit">Search</button>
-                        </div>
-                    </div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand logo-font" href="{% url 'home' %}">
+                🔮 <strong>Hecate’s</strong> Moon
+            </a>
+
+            <!-- Toggler -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar"
+                aria-controls="mainNavbar" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <!-- Search bar -->
+                <form class="d-flex mx-auto my-2 my-lg-0" method="GET" action="">
+                    <input class="form-control me-2" type="search" placeholder="Search spells, herbs, charms..." aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Search</button>
                 </form>
-            </div>
-            <div class="col-12 col-lg-4 text-center text-lg-end py-2">
-                <ul class="list-inline my-0">
-                    <li class="list-inline-item">
-                        <a href="{% url 'account_login' %}" class="text-light" title="login">
+
+                <!-- Right side links -->
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="{% url 'account_login' %}" class="nav-link" title="Login">
                             <i class="fas fa-sign-in-alt"></i>
                         </a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="{% url 'account_signup' %}" class="text-light" title="Sign Up">
-                           <i class="fas fa-user-plus"></i>
+                    <li class="nav-item">
+                        <a href="{% url 'account_signup' %}" class="nav-link" title="Sign Up">
+                            <i class="fas fa-user-plus"></i>
                         </a>
                     </li>
-                    <li class="list-inline-item">
-                        <a href="{% url 'cart' %}" class="text-light" title="Cart">
+                    <li class="nav-item">
+                        <a href="{% url 'cart' %}" class="nav-link" title="Cart">
                             <i class="fas fa-shopping-cart"></i>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <div style="margin-top: 120px;">
+    <!-- Flash messages -->
+    <div class="container" style="margin-top: 100px;">
         {% if messages %}
-        <div class="container">
-            {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}" role="alert">
-                {{ message }}
-            </div>
-            {% endfor %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}" role="alert">
+            {{ message }}
         </div>
+        {% endfor %}
         {% endif %}
     </div>
 
