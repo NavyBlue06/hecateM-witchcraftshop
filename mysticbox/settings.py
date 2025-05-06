@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'home',  # hecate shop
+    'boxes',  # hecate boxes
 
 
 ]
@@ -138,6 +139,7 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 
+ACCOUNT_ATHENTICATION_METHODS = ['email', 'username']
 ACCOUNT_SIGNUP_FIELDS = ["email", "username", "password1", "password2"]
 
 AUTHENTICATION_BACKENDS = [
