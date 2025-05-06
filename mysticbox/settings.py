@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',  # hecate shop
     'boxes',  # hecate boxes
+    'cart', # hecate cart
 
 
 ]
