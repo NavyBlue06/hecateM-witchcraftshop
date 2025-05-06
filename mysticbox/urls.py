@@ -21,4 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')), # Include allauth URLs for authentication
     path('', include('home.urls')),  # Include home app URLs
+    path('boxes/', include('boxes.urls')),  # Include boxes app URLs
+    path('cart/', include('cart.urls')),  # Include cart app URLs
+
 ]

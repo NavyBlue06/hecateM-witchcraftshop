@@ -4,4 +4,4 @@ from django.shortcuts import render
 from django.shortcuts import render
 
 def boxes_view(request):
-    return render(request, 'boxes/boxes.html')  # make sure this template exists
+    return render(request, 'boxes/all_products.html')  # make sure this template exists
